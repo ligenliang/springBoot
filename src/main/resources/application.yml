@@ -1,0 +1,23 @@
+server:
+  port: 1111
+spring:
+  application:
+    name: server-zuul
+zuul:
+  routes:
+    api-a:
+      path: /robbon/**
+      serviceId: robben-server
+    api-b:
+      path: /fogin/**
+      serviceId: fogin-server
+    api-c:
+      path: /hello/**
+      serviceId: hello-server
+  ignored-services: * #排除eureka服务ID路由的自动映射，只提供自定义的组织服务路由
+  prefix: /api #路由前缀
+hystrix.command.default.isolation.thread.timeoutInMilliseconds: 2500 #服务调用超时时间
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:2222/eureka/

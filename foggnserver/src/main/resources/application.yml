@@ -1,0 +1,23 @@
+server:
+  port: 2223
+spring:
+  application:
+    name: foggn-server
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/springboot?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+  output:
+    ansi:
+      enabled: Always
+eureka:
+  instance:
+    status-page-url: http://localhost:${server.port}/swagger-ui.html
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5555/eureka/
+    healthcheck:
+      enabled: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  #type-aliases-package: com.chaoqi.springboot_mybatisplus.domain

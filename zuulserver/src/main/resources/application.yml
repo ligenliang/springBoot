@@ -1,0 +1,23 @@
+server:
+  port: 1111
+spring:
+  application:
+    name: server-zuul
+zuul:
+  routes:
+    api-a:
+      path: /robbon/**
+      serviceId: robben-server
+    api-b:
+      path: /fogin/**
+      serviceId: fogin-server
+    api-c:
+      path: /hello/**
+      serviceId: hello-server
+  ignored-services: *
+  prefix: /api
+hystrix.command.default.isolation.thread.timeoutInMilliseconds: 2500
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:2222/eureka/

@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableEurekaClient
 @ComponentScan("com.example")
-@EnableDiscoveryClient
 public class FoggnserverApplication {
 
     public static void main(String[] args) {

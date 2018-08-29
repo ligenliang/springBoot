@@ -10,6 +10,14 @@ spring:
   output:
     ansi:
       enabled: Always
+  activemq:
+    broker-url: tcp://192.168.88.128:8161
+    in-memory: true
+    pool:
+      enabled: false
+  redis:
+    host: 192.168.88.128
+    port: 6379
 eureka:
   instance:
     status-page-url: http://localhost:${server.port}/swagger-ui.html

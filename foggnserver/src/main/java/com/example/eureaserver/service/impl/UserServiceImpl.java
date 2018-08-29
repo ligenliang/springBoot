@@ -4,6 +4,8 @@ import com.example.eureaserver.entity.UserEO;
 import com.example.eureaserver.mapper.UserMapper;
 import com.example.eureaserver.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,8 +13,10 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
+    @Cacheable(value = "findById",key = "1")
     @Override
     public UserEO findById(Integer userId) {
+        System.out.println("打印语句则说明没走缓存");
 
         return userMapper.findById(userId);
     }

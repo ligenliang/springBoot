@@ -1,13 +1,13 @@
 package com.example.eureaserver.mapper;
 
 import com.example.eureaserver.entity.UserEO;
-import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 /**
  * 用户中的增删改查
  */
-@Mapper
+
 @Repository
 public interface UserMapper{
     /**

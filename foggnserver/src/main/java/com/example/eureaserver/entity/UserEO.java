@@ -5,9 +5,10 @@ import io.swagger.models.auth.In;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Table(name="sys_user")
-public class UserEO {
+public class UserEO implements Cloneable, Serializable {
     @Id
     private Integer userId;
     @Column(name="user_name")
